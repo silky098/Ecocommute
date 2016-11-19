@@ -12,13 +12,14 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         session[:user_id] = @user.id
+        flash[:notice] = 'You signed up successfully'
+        flash[:color]= "valid"
         redirect_to '/'
-        # flash[:notice] = "You signed up successfully"
-        # flash[:color]= "valid"
+        @user.errors
       else
         redirect_to '/users/new'
-        # flash[:notice] = "Form is invalid"
-        # flash[:color]= "invalid"
+        flash[:error] = 'An error occured!'
+        flash[:color]= "invalid"
       end
   end
 

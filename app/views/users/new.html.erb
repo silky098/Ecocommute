@@ -2,9 +2,10 @@
 <p></p>
 <% @page_title = "UserAuth | Signup" %>
 <div class="Sign_Form">
-  <%= form_for @user, url: '/users' do |f| %>
+  <%= form_for @user do |f| %>
+  <!-- <%= form_for @user, url: '/users' do |f| %> -->
     <p> Name:</br> <%= f.text_field :name %> </p>
-    <p> Email:</br> <%= f.text_field :email %> </p>
+    <p> Email:</br> <%= f.text_field :email, class: 'form-control' %> </p>
     <p> Password:</br> <%= f.password_field :password %></p>
     <p> Password Confirmation:</br> <%= f.password_field :password_confirmation %> </p>
     <%= f.submit "Signup" %>
@@ -15,27 +16,6 @@
       <li>* <%= message_error %></li>
     <% end %>
     </ul>
+    <% end %>
   <% end %>
 </div>
-<!-- <div class="Sign_Form">
-  <%= form_for @user do |f| %>
-    <p>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </p>
-    <p>
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-    </p>
-    <p>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </p>
-    <p>
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
-    </p>
-
-    <%= f.submit 'Sign up' %>
-    <% end %>
-</div> -->
