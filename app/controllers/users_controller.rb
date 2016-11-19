@@ -13,16 +13,16 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
         redirect_to '/'
-        flash[:notice] = "You signed up successfully"
-        flash[:color]= "valid"
+        # flash[:notice] = "You signed up successfully"
+        # flash[:color]= "valid"
       else
         redirect_to '/users/new'
-        flash[:notice] = "Form is invalid"
-        flash[:color]= "invalid"
+        # flash[:notice] = "Form is invalid"
+        # flash[:color]= "invalid"
       end
   end
 
-    private
+  private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end

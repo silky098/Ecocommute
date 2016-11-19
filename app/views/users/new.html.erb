@@ -1,8 +1,7 @@
-<h1>Register New User</h1>
+<h1>Sign Up to EcoCommute</h1>
 <p></p>
 <% @page_title = "UserAuth | Signup" %>
 <div class="Sign_Form">
-  <h1>Sign Up</h1>
   <%= form_for @user, url: '/users' do |f| %>
     <p> Name:</br> <%= f.text_field :name %> </p>
     <p> Email:</br> <%= f.text_field :email %> </p>
