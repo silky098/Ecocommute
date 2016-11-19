@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+  before_action :check_for_user, :only => [:edit, :update]
 
   def index
-
+    @users = User.all
   end
 
   def new
@@ -9,18 +10,28 @@ class UsersController < ApplicationController
   end
 
   def create
-      @user = User.new(user_params)
-      if @user.save
-        session[:user_id] = @user.id
-        flash[:notice] = 'You signed up successfully'
-        flash[:color]= "valid"
-        redirect_to '/'
-        @user.errors
-      else
-        redirect_to '/users/new'
-        flash[:error] = 'An error occured!'
-        flash[:color]= "invalid"
-      end
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to root_path
+      flash[:message] = 'Sign up was successful'
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @user = @current_user
+  end
+
+  def update
+    @user = @current_user
+    if @user.update(user_params)
+      flash[:message] = 'Profile successfully updated'
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private

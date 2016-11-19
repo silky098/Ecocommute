@@ -2,6 +2,14 @@
 <p></p>
 <% @page_title = "UserAuth | Signup" %>
 <div class="Sign_Form">
+
+  <% if @user.errors.any? %>
+  <ol>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ol>
+<% end %>
   <%= form_for @user do |f| %>
   <!-- <%= form_for @user, url: '/users' do |f| %> -->
     <p> Name:</br> <%= f.text_field :name %> </p>
@@ -9,13 +17,7 @@
     <p> Password:</br> <%= f.password_field :password %></p>
     <p> Password Confirmation:</br> <%= f.password_field :password_confirmation %> </p>
     <%= f.submit "Signup" %>
-  <% end %>
-  <% if @user.errors.any? %>
-    <ul class="Signup_Errors">
-    <% for message_error in @user.errors.full_messages %>
-      <li>* <%= message_error %></li>
-    <% end %>
-    </ul>
+
     <% end %>
   <% end %>
 </div>

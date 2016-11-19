@@ -14,15 +14,14 @@ class SessionsController < ApplicationController
       flash[:color]= "valid"
     else
     # If user's login doesn't work, send them back to the login form.
+      flash[:message] = 'Invalid email or password'
       redirect_to login_path
-      flash[:error] = 'Login failed!'
-      flash[:color]= "invalid"
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to '/login'
+    redirect_to root_path
     flash[:error] = 'You have been logged out!'
     flash[:color]= "invalid"
   end

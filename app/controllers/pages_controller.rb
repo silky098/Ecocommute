@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   # before_filter :authorize
-  def index
+  def home
   end
 end

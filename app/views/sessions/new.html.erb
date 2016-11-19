@@ -3,17 +3,18 @@
 <% provide(:title, "Log in") %>
 
 <div>
-    <!-- <%= form_for(:session, url: '/login') do |f| %> -->
-    <%= form_for login_path do %>
+    <%= form_for(:session, url: login_path) do |f| %>
+    <!-- <%= form_tag login_path, :class => 'form-inline' do %> -->
 
       <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.email_field :email, :placeholder => 'e@mail.com', class: 'form-control' %>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
+
 <!-- <% end %> -->
     <p>New user? <%= link_to "New users sign up here", new_user_path %></p>
 
