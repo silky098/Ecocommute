@@ -3,17 +3,19 @@
 <% provide(:title, "Log in") %>
 
 <div>
-    <%= form_for(:session, url: login_path) do |f| %>
+  <% if flash[:message].present? %>
+  <p><%= flash[:message] %></p>
+  <% end %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, :placeholder => 'e@mail.com', class: 'form-control' %>
+  <%= form_tag login_path do %>
+  <%= label_tag :email %>
+  <%= email_field_tag :email %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
+  <%= submit_tag 'Log in' %>
+  <% end %>
 
-    <p>New user? <%= link_to "New users sign up here", new_user_path %></p>
-
-  </div>
+  <p>New user? <%= link_to "New users sign up here", new_user_path %></p>
+</div>
