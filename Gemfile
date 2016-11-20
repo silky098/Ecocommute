@@ -15,8 +15,13 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'bcrypt'
-
 gem 'bootstrap-sass'
+gem 'gmaps4rails'
+gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
+gem 'geocoder'
+gem 'bootstrap-generators'
+gem 'therubyracer', platforms: :ruby
+# gem 'less-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

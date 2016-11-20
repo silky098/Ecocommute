@@ -1,5 +1,19 @@
 <h1>All Users</h1>
-<h2>Please don't send them spam</h2>
+<h2>For Admin Only</h2>
 <% @users.each do |user| %>
+  <%= user.name %><br>
   <%= user.email %><br>
+  <%= user.address %><br>
+  <%= user.postcode %><br>
+  <%= user.phone %><br>
+  <%= user.gender %><br>
+  <%= user.license %><br>
+  <%= user.car_make %><br>
+  <%= user.car_colour %><br>
+  <%= user.car_reg_no %><br>
+  <%= user.smoking %><br>
+  <%= user.pets %><br>
+  <%= user.destination_id %><br>
+  <%= user.latitude %><br>
+  <%= user.longitude %><br>
 <% end %>

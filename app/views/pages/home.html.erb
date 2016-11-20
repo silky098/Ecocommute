@@ -2,3 +2,12 @@
 <p>An app to help make commuter connections and save the environment - It's a win-win!</p>
 <% if @current_user.present? %>
 <% end %>
+
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script>
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+</script>
