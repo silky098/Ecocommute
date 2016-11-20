@@ -12,8 +12,8 @@ Destination.destroy_all
 Seat.destroy_all
 
 
-driver = User.create name: 'bob', email: 'bob@bob.com', address: '12 Test Rd', password_digest: 'chicken'
-passenger = User.create name: 'Shaila', email: 'shaila@shaila.com', address: '11 Test Rd', password_digest: 'chicken'
+driver = User.create name: 'bob', email: 'bob@bob.com', address: '12 Test Rd', password: 'chicken'
+passenger = User.create name: 'Shaila', email: 'shaila@shaila.com', address: '11 Test Rd', password: 'chicken'
 
 r = Ride.create spaces: 3, day: :monday, start_time: '9:00'
 

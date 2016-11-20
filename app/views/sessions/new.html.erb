@@ -4,7 +4,6 @@
 
 <div>
     <%= form_for(:session, url: login_path) do |f| %>
-    <!-- <%= form_tag login_path, :class => 'form-inline' do %> -->
 
       <%= f.label :email %>
       <%= f.email_field :email, :placeholder => 'e@mail.com', class: 'form-control' %>
@@ -15,7 +14,6 @@
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
 
-<!-- <% end %> -->
     <p>New user? <%= link_to "New users sign up here", new_user_path %></p>
 
   </div>

@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by :email => params[:email]
-      if user.present? && user.authenticate(params[:password])
+    if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to root_path
       # Save the user id inside the browser cookie. This is how we keep the user
