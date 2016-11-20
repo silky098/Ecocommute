@@ -13,12 +13,16 @@
  *= require_tree .
  *= require_self
  */
-
-.login{
-  float: right;
-  visibility: visible;
-  position: relative;
-  display: block;
+ @media
+   (min-width: 970px){
+ .login_bar {
+     z-index: 999999;
+     display: block;
+     position: relative;
+     left: 40px;
+     top: -50px;
+     color: white;
+   }
+.space {
   margin-top: 60px;
-  color: black;
 }

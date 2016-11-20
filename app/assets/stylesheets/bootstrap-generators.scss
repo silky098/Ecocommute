@@ -1,17 +1,10 @@
 @import "bootstrap-variables.scss";
 @import "bootstrap-sprockets.scss";
 @import "bootstrap.scss";
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
 
 body {
   padding-top: $navbar-height + 10px;
-}
-.login{
-  float: right;
-  visibility: visible;
-  position: relative;
-  display: block;
-  margin-top: 60px;
-  color: black;
 }
 
 .page-header {

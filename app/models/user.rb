@@ -4,10 +4,10 @@ class User < ActiveRecord::Base
   has_many :seats
   has_many :rides
 
-  # geocoded_by :address
-  # after_validation :geocode
-
   has_secure_password
   validates :email, :presence => true, :uniqueness => true
+
+  # geocoded_by :address       # can also be an IP address
+  # after_validation :geocode  # auto-fetch coordinates
 
 end

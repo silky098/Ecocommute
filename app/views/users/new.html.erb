@@ -14,11 +14,13 @@
 <% end %>
   <%= form_for @user do |f| %>
   <!-- <%= form_for @user, url: '/users' do |f| %> -->
-    <p> Name:</br> <%= f.text_field :name %> </p>
-    <p> Email:</br> <%= f.text_field :email, class: 'form-control' %> </p>
-    <p> Password:</br> <%= f.password_field :password %></p>
-    <p> Password Confirmation:</br> <%= f.password_field :password_confirmation %> </p>
-    <%= f.submit "Signup" %>
+  <p>Latitude:</br> <%= f.text_field :latitude %></p>
+  <p>Longitude:</br> <%= f.text_field :longitude %></p>
+  <p> Name:</br> <%= f.text_field :name %> </p>
+  <p> Email:</br> <%= f.text_field :email, class: 'form-control' %> </p>
+  <p> Password:</br> <%= f.password_field :password %></p>
+  <p> Password Confirmation:</br> <%= f.password_field :password_confirmation %> </p>
+  <%= f.submit "Signup" %>
 
     <% end %>
   <% end %>
