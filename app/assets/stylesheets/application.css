@@ -13,16 +13,195 @@
  *= require_tree .
  *= require_self
  */
- @media
-   (min-width: 970px){
- .login_bar {
+ @media (min-width: 767px){
+  div.login_bar {
      z-index: 999999;
      display: block;
      position: relative;
      left: 40px;
-     top: -50px;
+     top: -35px;
      color: white;
    }
+ }
+@media only screen and (max-width: 766px){
+   div.login_bar {
+     position: relative;
+     left: 10px;
+     top: 25px;
+   }
+}
+ @media (max-width: 969px){
+ .Sign_Form {
+    border: 0;
+    background: rgba(235,237,240,1);
+    max-width: 360px;
+    padding: 30px;
+    margin-left: 28%;
+    margin-right: 20%;
+  }
+}
+@media only screen and (max-width: 766px) {
+.Sign_Form {
+   border: 0;
+   background: rgba(235,237,240,1);
+   max-width: 360px;
+   padding: 30px;
+   margin-left: 20%;
+   margin-right: 10%;
+ }
+}
+@media (max-width: 469px){
+.Sign_Form {
+   border: 0;
+   background: rgba(235,237,240,1);
+   max-width: 360px;
+   padding: 20px;
+   margin-left: 0;
+   margin-right: 0;
+ }
+}
+@media (min-width: 970px){
+  .Sign_Form {
+      border: 0;
+      background: rgba(235,237,240,1);
+      max-width: 360px;
+      padding: 40px;
+      margin-left: 35%;
+      margin-right: 10%;
+  }
+}
+@media only screen and (max-width: 766px) {
+  .collapsing, .in {
+    background-color: #444;
+  }
+  .collapsing ul li a, .in ul li a {
+    color: #f1f1f1!important;
+  }
+.collapsing ul li a:hover, .in ul li a:hover {
+  color: #333!important;
+  }
+}
+@media only screen and (max-width: 766px){
+  .collapsing, .in {
+    background-color: #777777;
+  }
+}
+@media only screen and (max-width: 766px){
+  .jumbotron h1, .jumbotron .h1 {
+      font-size: 36px!important;
+  }
+}
+@media only screen and (max-width: 766px){
+  h1, .h1 {
+     font-size: 36px!important;
+  }
+}
+ h1, .h1 {
+    font-size: 46px;
+    color: #ce400c;
+    text-align: center;
+    margin-bottom: 40px;
+}
 .space {
   margin-top: 60px;
+}
+.navbar-brand > img {
+    display: block;
+    margin-top: -10px;
+    height: 70px;
+}
+.logo_large{
+  height: 100px;
+  margin-top: -30px;
+}
+/*nav bar*/
+.navbar {
+    background-color: #333;
+    border: 1px solid #333;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+}
+#navbar{
+    border: 0;
+    position: fixed;
+    top: 12px;
+    left: 320px;
+    font-size: 18px;
+}
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand {
+  color: #333;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: #eee;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #999;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #ebedf0;
+    margin-left: 20px;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #ce400c;
+    background-color: #f5f5f5;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #ccc;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #ddd;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: #ce400c;
+}
+.main_image {
+    background-image: url(/assets/car_people.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    position: relative;
+}
+.main_heading {
+    font-size: 36px;
+    background-color: rgba(255,255,255,0.8);
+    padding: 20px 0;
+    color: #ce400c;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+}
+.jumbotron {
+    padding: 30px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 2.1428571435;
+    color: inherit;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 20%;
+    width: 100%;
+}
+.jumbotron h1, .jumbotron .h1 {
+    color: #ce400c;
+}
+#main_subtitle {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #444;
+}
+.cta_home {
+    display: -webkit-inline-box;
+}
+button#find_ride.btn.btn-primary.btn-lg, button#offer_ride.btn.btn-primary.btn-lg {
+  margin: 0 25px;
+}
+.email_field {
+  width: 220px;
+}
+.driver_form {
+  display: none;
 }

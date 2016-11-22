@@ -2,20 +2,16 @@
 <p></p>
 <% provide(:title, "Log in") %>
 
-<div>
+<div class="Sign_Form">
   <% if flash[:message].present? %>
   <p><%= flash[:message] %></p>
   <% end %>
 
-  <%= form_tag login_path do %>
-  <%= label_tag :email %>
-  <%= email_field_tag :email %>
-
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-
-  <%= submit_tag 'Log in' %>
+  <%= bootstrap_form_for login_path do |f| %>
+    <%= f.email_field :email, :placeholder => "email" %>
+    <%= f.password_field :password, :placeholder => "password"  %>
+    <%= f.check_box :remember_me %>
+    <%= f.submit "Log In" %>
   <% end %>
-
   <p>New user? <%= link_to "New users sign up here", new_user_path %></p>
 </div>

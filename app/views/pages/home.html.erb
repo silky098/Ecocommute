@@ -1,11 +1,24 @@
-<h1>Commuter Connect</h1>
-<p>Find and share regular car share connections</p>
-<% if @current_user.present? %>
-<% end %>
+
+<div class="main_image">
+  <!-- <div class="main_heading"> -->
+    <div class="jumbotron">
+    <h1>Commuter Connect</h1>
+    <p id="main_subtitle">Find and share regular car share connections</p>
+    <div class="cta_home">
+      <%= link_to new_user_path, :class => 'btn btn-primary btn-lg' do %>
+      <span class="glyphicon glyphicon-plus"></span>
+        Register Now
+     <% end %>
+    </div>
+  </div>
+</div>
+  <% if @current_user.present? %>
+  <% end %>
 
 
 <div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+  <div id="map" style='width: 800px; height: 400px;'>
+  </div>
 </div>
 
 <script>

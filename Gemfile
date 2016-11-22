@@ -20,6 +20,7 @@ gem 'gmaps4rails'
 gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
 gem 'geocoder'
 gem 'bootstrap-generators'
+gem 'bootstrap_form'
 gem 'therubyracer', platforms: :ruby
 # gem 'less-rails'
 

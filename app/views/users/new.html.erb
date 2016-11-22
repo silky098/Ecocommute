@@ -1,9 +1,12 @@
-<h1>Sign Up to EcoCommute</h1>
+<div class="container">
+<h1>Register to use Commuter Connect</h1>
 <p></p>
 <div class="login">
 <% @page_title = "UserAuth | Signup" %>
 </div>
-<div class="Sign_Form">
+
+<!-- registration form -->
+<div class="Sign_Form form_group">
 
   <% if @user.errors.any? %>
   <ol>
@@ -12,16 +15,47 @@
     <% end %>
   </ol>
 <% end %>
-  <%= form_for @user do |f| %>
-  <!-- <%= form_for @user, url: '/users' do |f| %> -->
-  <p>Latitude:</br> <%= f.text_field :latitude %></p>
-  <p>Longitude:</br> <%= f.text_field :longitude %></p>
-  <p> Name:</br> <%= f.text_field :name %> </p>
-  <p> Email:</br> <%= f.text_field :email, class: 'form-control' %> </p>
-  <p> Password:</br> <%= f.password_field :password %></p>
-  <p> Password Confirmation:</br> <%= f.password_field :password_confirmation %> </p>
-  <%= f.submit "Signup" %>
 
-    <% end %>
+  <%= bootstrap_form_for @user do |f| %>
+  <p> * required information</p>
+  <p><%= f.text_field :name, :label => "*name", :required => true, :placeholder => "name" %> </p>
+  <p><%= f.email_field :email, :label => "*email address", :required => true, :placeholder => "email" %></p>
+  <p><%= f.password_field :password, :label => "*password", :required => true, :placeholder => "password" %></p>
+  <p><%= f.password_field :password_confirmation, :label => "*password confirmation", :required => true, :placeholder => "password confirmation" %></p>
+  <p><%= f.text_area :address, :label => "*home address", :required => true, :placeholder => "street number, street name, city" %></p>
+  <p><%= f.text_field :phone, :label => "*phone number", :required => true, :placeholder => "phone" %></p>
+  <p> *Gender</br>
+    <%= radio_button_tag(:gender, "male") %>
+    <%= label_tag(:male, "male") %>
+    <%= radio_button_tag(:gender, "female") %>
+    <%= label_tag(:female, "female") %>
+    <%= radio_button_tag(:gender, "transgender") %>
+    <%= label_tag(:transgender, "transgender") %></p>
+  <p> Do you wish to register as a driver?
+    <%= check_box_tag(:driver, true, false, {:class => 'driver_check'}) %>
+    <%= label_tag(:driver, "yes") %></p>
+  <div class="driver_form">
+    <p><%= f.text_field :license, :placeholder => "driver's licence number" %></p>
+    <p><%= f.text_field :car_make, :placeholder => "car make/model" %></p>
+    <p><%= f.text_field :car_colour, :placeholder => "phone number" %></p>
+    <p><%= f.text_field :car_reg_no, :placeholder => "car registration number" %></p>
+    <p>Do you smoke in your car?</br>
+      <%= radio_button_tag(:smoking, "yes") %>
+      <%= label_tag(:yes, "yes") %>
+      <%= radio_button_tag(:smoking, "no") %>
+      <%= label_tag(:no, "no") %></p>
+    <p>Do you allow pets in your car?</br>
+      <%= radio_button_tag(:pets, "yes") %>
+      <%= label_tag(:yes, "yes") %>
+      <%= radio_button_tag(:pets, "no") %>
+      <%= label_tag(:no, "no") %></p>
+  </div>
+  <%= f.submit :signup %>
+</br>
+<hr>
+  <p>*please ignore the stuff below for now</p>
+  <p>Latitude:</br> <%= @user.latitude %></p>
+  <p>Longitude:</br> <%= @user.longitude %></p>
   <% end %>
+</div>
 </div>
